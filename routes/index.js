@@ -98,12 +98,19 @@ var user = new userModel({
   email:req.body.email,
   phonenum:req.body.phonenum,
 })
-userModel.register(user,req.body.password).then(function(user){
-  passport.authenticate('local')(req,res,function(){
-    res.redirect("/main")
+var old = userModel.findOne({username:req.body.username});
+if(old){
+res.redirect("/")
+}
+else{
+  userModel.register(user,req.body.password).then(function(user){
+    passport.authenticate('local')(req,res,function(){
+      res.redirect("/main")
+    })
   })
+}
 })
-})
+
 router.post('/login',passport.authenticate('local',{
   successRedirect:"/main",
   failureRedirect:"/"
