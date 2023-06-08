@@ -39,11 +39,7 @@ cloudinary.config({
   api_secret: `${secret}`,
 });
 
-cloudinary.config({
-  cloud_name: "dva2mw96s",
-  api_key: "597763852578164",
-  api_secret: "cKjVOS77VQJ1453njCNxL0VV2lc",
-});
+
 
 async function AudiouploadToCloudinary(audiopath) {
   return cloudinary.uploader.upload(audiopath,{folder:"musicapp", resource_type: "raw" }).then((result) => { fs.unlinkSync(audiopath);
