@@ -1,0 +1,340 @@
+@font-face {
+  font-family: gilroy;
+  src: url(../fonts/Gilroy-Light.otf);
+}
+@font-face {
+  font-family: voyage;
+  src: url(../fonts/Voyage-Regular.otf);
+}
+
+
+
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+}
+#main{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background-color: black;
+}
+#left{
+  width: 35%;
+  height: 100%;
+  background-image: url("../images/photo-1466232373731-46205f0b668e.avif");
+  background-size:cover;
+  background-position: center;
+  /* background-color: rgb(132, 39, 39); */
+}
+#right{
+  width: 65%;
+  height: 100%;
+  position: relative;
+  background-color: rgb(37, 37, 37);
+}
+#loginpage{
+  width:50%;
+  height: 65%;
+  background-color: rgba(124, 124, 124, 0.1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* display: none; */
+  font-family: gilroy;
+  transform: translate(-50%,-50%); 
+  /* position: relative; */
+  /* transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s; */
+}
+#form{
+  width: 100%;
+  height: 100%;
+  padding-top: 3vw;
+  /* background-color: rgb(22, 112, 112); */
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+}
+#form>p{
+  color: whitesmoke;
+  font-size: 1.2vw;
+  margin-top: 20px;
+  text-align: center;
+}
+#form>h5{
+  text-align: center;
+  font-size: 2vw;
+  margin-bottom: 20px;
+  font-weight: 300;
+  /* font-family: gilroy; */
+  /* font-weight: 100; */
+  /* font-family: 'Babylonica', cursive; */
+  color: white;
+}
+#form>form{
+  height: 55%;
+  justify-content: space-around;
+display: flex;
+flex-direction: column;
+margin-bottom: 5px;
+}
+input{
+  margin-left: auto;
+  margin-right: auto;
+ width: 50%; 
+ height: 40px;
+ text-align: center;
+ background: none;
+ border: none;
+ color: white;
+ border-bottom: 1px solid whitesmoke;
+ outline: none;
+ 
+}
+::placeholder { 
+color: whitesmoke;
+
+}
+#submit{
+  /* margin-top: 2px; */
+  width:fit-content;
+  padding: 0vw 1.5vw;
+  font-size: 1vw;
+  border: 1px solid whitesmoke;
+}
+#form>small{
+  margin-top: 15px;
+  text-align: center;
+}
+#form>a{
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+#form>small>a{
+  color: whitesmoke;
+}
+#form>h2>a{
+  color: whitesmoke;
+}
+#form>h2{
+  padding-top: 15px;
+  border-top: 1px solid whitesmoke;
+  margin-top: 30px;
+  text-align: center;
+  font-size: 1vw;
+  font-weight: 300;
+}
+#signuppage{
+  width:50%;
+  height: 70%;
+  background-color: rgba(124, 124, 124, 0.1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: none;
+  font-family: gilroy;
+  transform: translate(-50%,-50%); 
+  /* position: relative; */
+  /* transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s; */
+}
+#signuppage>#form>form{
+  /* margin-top: 3vw;
+  margin-bottom: 3vw; */
+  height: 70%;
+  /* background-color: antiquewhite; */
+}
+
+
+
+
+
+
+
+#resetpage{
+  font-family: gilroy;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  left: 50%;
+  width: 400px;
+  height: 300px;
+  color: white;
+  display: none;
+  background-color: rgba(124, 124, 124, 0.1);
+ 
+  /* background-color: aqua; */
+  /* transition: all cubic-bezier(0.19, 1, 0.22, 1) 2s; */
+}
+
+#nav{
+  display: flex;
+  width: 100%;
+  height: 8vh;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-family: gilroy;
+  padding: 0vw 2vw;
+}
+#nav>h4{
+  font-size: 2vw;
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-family: voyage
+}
+#nav>button{
+  width: 100px;
+  height: 35px;
+  background: none;
+  border: none;
+  border: 1px solid white;
+  color: white;
+}
+
+
+
+
+@media (max-width:600px) {
+  #left{
+      display: none;
+  }
+  #right{
+      width: 100%;
+  }
+  #nav{
+      display: flex;
+      width: 100%;
+      height: 8vh;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      font-family: gilroy;
+      padding: 0vw 7vw;
+    }
+  #nav>h4{
+      font-size: 6vw;
+      font-weight: 400;
+      letter-spacing: 1px;
+  }
+  #nav>button{
+      font-size: 4vw;
+      width: 100px;
+      height: 35px;
+      background: none;
+      border: none;
+      border: 1px solid white;
+      color: white;
+  }
+  #loginpage{
+      padding-top: 8vw;
+      width: 80%;
+  }
+  #form>h5{
+      font-size: 5vw;
+  }
+  #form>form{
+      /* background-color: antiquewhite; */
+  }
+  #form>form{
+      height: 50%;
+      justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    }
+    input{
+      margin-left: auto;
+      margin-right: auto;
+     width: 70%; 
+     height: 40px;
+     text-align: center;
+     background: none;
+     border: none;
+     color: white;
+     border-bottom: 1px solid whitesmoke;
+     outline: none;
+    
+    }
+    ::placeholder { 
+    color: whitesmoke;
+    
+    }
+    #submit{
+      /* margin-top: 2px; */
+      width:fit-content;
+      padding: 0vw 5.5vw;
+      font-size: 5vw;
+      border: 1px solid whitesmoke;
+    }
+    #form>small{
+      margin-top: 25px;
+      text-align: center;
+    }
+    #form>p{
+      color: whitesmoke;
+      font-size: 4.2vw;
+      margin-top: 30px;
+      text-align: center;
+   }
+   
+
+#resetpage{
+  font-family: gilroy;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  left: 50%;
+  width: 80%;
+  height:30%;
+  color: white;
+  display: none;
+  background-color: rgba(124, 124, 124, 0.1);
+ 
+  /* background-color: aqua; */
+  /* transition: all cubic-bezier(0.19, 1, 0.22, 1) 2s; */
+}
+#signuppage{
+  width: 80%;
+}
+#signuppage>#form>h5{
+
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
+<!-- <% for(var i = 1; i < 7 ; i++ ){ %>
+  <a href="/playsong/<%=song[i]._id%>">
+      <div id="musicbox">
+          <img src="<%=song[i].img%>" alt="">
+          <h1><%=song[i].songname%></h1>
+          <h2><%=song[i].Artistname%></h2>
+      </div>
+  </a>
+<%  }%> -->
+<!-- <%song.forEach(function(songs){ %>
+  <a href="/playsong/<%=songs._id%>">
+      <div id="musicbox">
+          <img src="<%=songs.img%>" alt="">
+          <h1><%=songs.songname%></h1>
+          <h2><%=songs.Artistname%></h2>
+      </div>
+  </a>
+  <%  })%> --> */

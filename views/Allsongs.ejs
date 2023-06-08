@@ -1,0 +1,629 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musify || By Anurag Parashar</title>
+    <link rel="shortcut icon" href="../images/dazzle-music-disc.png" type="image/x-icon">
+    
+    <style>
+    @font-face {
+    font-family: gilroy;
+    src: url(../fonts/Gilroy-Regular.otf);
+  }
+    @font-face {
+    font-family: gilroy-light;
+    src: url(../fonts/Gilroy-Thin.otf);
+  }
+
+  @font-face {
+    font-family: voyage;
+    src: url(../fonts/Voyage-Regular.otf);
+  }
+
+        *{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+#main{
+    width: 100%;
+    height: 91vh;
+    background-color: rgb(25, 25, 25);
+    display: flex;
+    /* overflow: scroll; */
+}
+#left{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: black;
+    padding: 2.5vw;
+    
+}
+#left>a{
+   
+    font-family: gilroy;
+    color: white;
+    text-decoration: none;
+    font-size: 1.4vw;
+    display: flex;
+    align-items: center;
+}
+#right{
+    width: 80%;
+    height: 100%;
+    /* overflow: scroll; */
+}
+
+#rights{width: 100%;
+height: 90vh;}
+#righttop{
+    width: 100%;
+    height: 100%;
+    /* background-color: antiquewhite; */
+    font-family: gilroy;
+    /* padding: 2vw; */
+    overflow: hidden;
+    padding-top: 2vw;
+    padding-left: 2vw;
+}
+#righttop::-webkit-scrollbar{
+    display: none;
+}
+#righttop>h1{
+    font-size: 2vw;
+    font-weight: 500;
+    display: flex;
+    position: relative;
+    color: white;
+    margin-bottom: 1.2vw;
+}
+
+
+
+
+
+#nav{
+    width: 100%;
+    height: 9vh;
+    font-family: gilroy;
+   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 4vw;
+    padding-right: 2vw;
+    color: white;
+    background-color: black;
+    /* margin-bottom: 2px; */
+    border-bottom: 2px solid rgb(232, 36, 36);
+    
+    /* background-color: rgb(222, 197, 197); */
+}
+#nav>#navleft>a{
+    text-decoration: none;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: 1px solid white;
+}
+#navright{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navright>h1{
+    margin-left: 15px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    font-family: voyage;
+    font-size: 2vw;
+    /* text-transform: u; */
+}
+#navleft{
+    display: flex;
+    gap: 20px;
+}
+
+#navright>.ri-menu-line{
+display: none;
+}
+
+
+
+
+
+
+#songs{
+    width: 100%;
+    height: 86%;
+    /* background-color: antiquewhite; */
+    overflow: scroll;
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+#songs::-webkit-scrollbar{
+    display: none;
+}
+#song{
+    padding: 0vw 2.5vw;
+    width: 95%;
+    height: 100px;
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.507);
+    padding-bottom: 30px;
+    /* justify-content: center; */
+}
+#song>a>img{
+    width: 50px;
+    height: 50px;
+    box-shadow: 2px 2px 5px white;
+}
+#songinfo{
+    width: 180px;
+ /* background-color: antiquewhite; */
+ display: flex;
+ flex-direction: column;
+ gap: 10px;
+ margin-right: 0px;
+}
+#songsdata{
+    width: 21%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    gap: 30px;
+    border-right: 1px solid white;
+   
+}
+#songsinfo{
+    width: 300px;
+    color: white;
+    
+}
+#songsinfo>h2{
+    
+    font-weight: 500;
+}
+#songsinfo>h4{
+    font-family: gilroy-light;
+    color: white;
+    font-weight: 100;
+}
+#songinfo>h4{
+    font-family: gilroy-light;
+    color: white;
+    font-weight: 100;
+}
+#songinfo>h5{
+    color: white;
+    font-weight: 500;
+    font-size: 1vw;
+}
+#play{
+    font-family: gilroy;
+    color: white;
+    text-decoration: none;
+    font-size: 1vw;
+    border: 1px solid white;
+    padding: 0.5vw 1.5vw;
+    display: flex;
+    align-items: center;
+} 
+#pagin{
+    /* background-color: aqua; */
+    /* position: absolute;
+    top: 7vw;
+    right: 5%; */
+}
+#pagin>span{
+    color: white;
+    margin-left: 1vw;
+    padding: 0.3vw 1vw;
+    border: 1px solid white;
+}
+#pagin>a{
+    margin-left: 1vw;
+    font-family: gilroy;
+    color: white;
+    text-decoration: none;
+    font-size: 1vw;
+    padding: 0.3vw 1vw;
+    border: 1px solid white;
+    color: white;
+}
+#song>a{
+    text-decoration: none;
+}
+
+
+
+
+
+@media (max-width:600px) {
+   
+
+   #nav{
+       width: 100%;
+       height: 8vh;
+       font-family: gilroy;
+      
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       padding-left: 5vw;
+       padding-right: 5vw;
+       color: white;
+       background-color: black;
+       /* margin-bottom: 2px; */
+       border-bottom: 2px solid rgb(232, 36, 36);
+       
+       /* background-color: rgb(222, 197, 197); */
+   }
+   #nav>#navleft>a{
+    text-decoration: none;
+    padding-left: 2.5vw;
+    padding-right: 2.5vw;
+    height: 35px;
+    font-size: 3.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: 1px solid white;
+}
+#navright>h1{
+    font-weight: 500;
+    letter-spacing: 3px;
+    font-family: voyage;
+    font-size: 6.2vw;
+    /* text-transform: u; */
+}
+#navleft{
+    display: flex;
+    gap: 10px;
+}
+#navright>.ri-menu-line{
+    margin-top: 4px;
+    font-size: 5.5vw;
+    display:initial;
+    }
+       
+       #navright{
+           display: flex;
+           align-items: center;
+           justify-content: center;
+       }
+       
+     
+#main{
+    width: 100%;
+    height: 92vh;
+    background-color: rgb(25, 25, 25);
+    display: flex;
+    /* overflow: scroll; */
+}
+#left{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: 9999;
+    padding-left: 10vw;
+    position: absolute;
+    flex-direction: column;
+    gap: 40px;
+   padding-top: 10vw;
+    background-color: black;
+    /* padding-right: 7vw; */
+    left: -100%;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 2s;
+}
+#left>a{
+   /* margin-left: 7vw; */
+    font-family: gilroy;
+    color: white;
+    text-decoration: none;
+    font-size: 6.4vw;
+    display: flex;
+    align-items: center;
+}
+
+
+#right{
+    width: 100%;
+    height: 100%;
+    /* overflow: scroll; */
+}
+
+#rights{
+    width: 100%;
+height: 100%;
+/* background-color: aqua; */
+}
+#righttop{
+    width: 100%;
+    height: 100%;
+    /* background-color: antiquewhite; */
+    font-family: gilroy;
+    /* padding: 2vw; */
+    overflow: scroll;
+    padding-top: 4vw;
+    padding-left: 3vw;
+}
+#righttop::-webkit-scrollbar{
+    display: none;
+}
+#righttop>h1{
+    margin-left: 4.5vw;
+    font-size: 7vw;
+    font-weight: 500;
+    display: flex;
+    position: relative;
+    color: white;
+    margin-bottom: 2.2vw;
+}
+
+
+
+
+
+#songs{
+    width: 100%;
+    height: 90%;
+    /* background-color: antiquewhite; */
+    overflow: scroll;
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+#songs::-webkit-scrollbar{
+    display: none;
+}
+#song{
+    padding: 0vw 2.5vw;
+    width: 95%;
+    height: 20vw;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    /* background-color: aqua; */
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.507);
+    padding-bottom: 20px;
+    /* justify-content: center; */
+}
+#song>a>img{
+    width: 60px;
+    height: 60px;
+    box-shadow: 1px 1px 5px white;
+}
+#songinfo{
+    width: 180px;
+ /* background-color: antiquewhite; */
+ display: flex;
+ flex-direction: column;
+ gap: 10px;
+ margin-right: 0px;
+}
+#songsdata{
+    width: 21%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    gap: 30px;
+    border-right: 1px solid white;
+    /* align-items: center; */
+    /* background-color: aqua; */
+    /* background-color: black; */
+}
+#song>a{
+    text-decoration: none;
+}
+#songsinfo{
+    text-decoration: none;
+    width: 300px;
+    color: white;
+    /* background-color: aqua; */
+}
+#songsinfo>h2{
+    
+    font-weight: 500;
+}
+#songsinfo>h4{
+    color: white;
+    font-weight: 100;
+}
+#songinfo>h4{
+    color: white;
+    font-weight: 100;
+}
+#songinfo>h5{
+    color: white;
+    font-weight: 500;
+    font-size: 1vw;
+}
+#play{
+    font-family: gilroy;
+    color: white;
+    text-decoration: none;
+    font-size: 1vw;
+    border: 1px solid white;
+    padding: 0.5vw 1.5vw;
+    display: flex;
+    align-items: center;
+} 
+
+
+#pagin{
+    /* background-color: aqua; */
+    /* position: absolute;
+    top: 10.2%;
+    right: 5%; */
+    display: flex;
+    gap: 5px;
+    margin-top: 5vw;
+    margin-bottom: 15px;
+    margin-right: 3vw;
+}
+#pagin>span{
+    color: white;
+    margin-left: 1vw;
+    padding: 1vw 2vw;
+    border: 1px solid white;
+}
+#pagin>a{
+    margin-left: 1vw;
+    font-family: gilroy;
+    color: white;
+    text-decoration: none;
+    font-size: 4vw;
+    padding: 1vw 3vw;
+    border: 1px solid white;
+    color: white;
+}
+
+
+
+
+
+
+   
+   
+    }   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+    <div id="nav">
+        <div id="navright">
+            <i class="ri-menu-line"></i>
+            <h1>Musify</h1>
+        </div>
+       
+        <div id="navleft"><a href="/myprofile">My Account</a>
+            <a href="/logout">Logout</a></div>
+        
+    </div>
+    <div id="main">
+        <div id="left">
+            <a href="/main"><i class="ri-home-3-line"></i>&nbsp;&nbsp;&nbsp;Home</a>
+            <a href="/allsongs"><i class="ri-play-circle-fill"></i>&nbsp;&nbsp;&nbsp;All-Songs</a>
+            <a href="/myplaylist"><i class="ri-play-list-line"></i>&nbsp;&nbsp;&nbsp;My Playlist</a>
+            <a href="/favourites"><i class="ri-heart-add-line"></i>&nbsp;&nbsp;&nbsp;Favourites </a>
+            <a href="/createplaylist"><i class="ri-play-list-add-line"></i>&nbsp;&nbsp;&nbsp;Create Playlist</a>
+            <hr style="opacity: 0.5;">
+            <%user.playlist.forEach(function(play){%>
+                <a href="/openplaylist/<%=play._id%>"><i class="ri-play-list-line"></i>&nbsp;&nbsp;&nbsp;<%=play.playlistname%></a>
+           <% })%>
+
+        </div>
+        <div id="right">
+            <div id="rights">
+                <div id="righttop">
+                    <h1>All Songs</h1>
+                    <br>
+                    <div id="songs">
+                        <% data.reverse().forEach(function(songs){ %>
+                        <div id="song">
+                            <a href="/playsong/<%=songs._id%>"> <img src="<%=songs.img%>" alt="">
+                            </a>
+                            <a href="/playsong/<%=songs._id%>">
+                                <div id="songsinfo">
+                                    <h2><%=songs.songname%></h2>
+                                    <h4><%=songs.Artistname%></h4>
+                                </div>
+                            </a>
+                           <a href="/playsong/<%=songs._id%>">
+                            <div id="songinfo">
+                                <h5><%=songs.type%></h5>
+                                <h4><%=songs.Releasedate%></h4>
+                            </div>
+                           </a>
+                           <a href="/playsong/<%=songs._id%>">
+                            <div id="songinfo" >
+                                <h5>Total Likes</h5>
+                                <h4><%=songs.likes.length%> likes  Till Now</h4>
+                            </div>
+                           </a>
+                           
+                            <a id="play" href="/playsong/<%=songs._id%>" style="margin-left: 0px;">Play Song</a>
+                           
+                            </div>
+                            <%})%>
+                            <div id="pagin" style=""><a href="/allsongs/?page=<%=prev%>">Prev</a>
+                                <span><%=(skip)%></span>
+                                <a href="/allsongs/?page=<%=skip%>">Next</a></div>
+                        </div> 
+                            
+                       
+                       
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+        
+    <script>
+         var flag = 0;
+        
+        document.querySelector('.ri-menu-line').addEventListener("click",function(req,res){
+
+            if(flag === 0){
+
+        document.querySelector("#left").style.left="0%"
+        flag = 1;
+            }else if(flag === 1){
+                document.querySelector("#left").style.left="-100%"
+       
+    
+    flag=0;  
+            }
+    })
+    </script>
+</body>
+</html>

@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musify || By Anurag Parashar</title>
+    <link rel="shortcut icon" href="../images/dazzle-music-disc.png" type="image/x-icon">
+    
+    <style>
+         @font-face {
+    font-family: gilroy;
+    src: url(../fonts/Gilroy-Regular.otf);
+  }
+    @font-face {
+    font-family: gilroy-light;
+    src: url(../fonts/Gilroy-Thin.otf);
+  }
+  @font-face {
+    font-family: voyage;
+    src: url(../fonts/Voyage-Regular.otf);
+  }
+        *{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+#main{
+    width: 100%;
+    height: 91vh;
+    overflow: hidden;
+    background-color: rgb(25, 25, 25);
+    display: flex;
+    /* overflow: scroll; */
+}
+#left{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: black;
+    padding: 2.5vw;
+    
+}
+#left>a{
+   
+    font-family: gilroy;
+    color: white;
+    text-decoration: none;
+    font-size: 1.4vw;
+    display: flex;
+    align-items: center;
+}
+#right{
+    width: 80%;
+    height: 100%;background-color: rgba(137, 129, 129, 0.574);
+    
+
+    /* background-color: rgba(122, 117, 117, 0.507); */
+    color: white;
+    /* background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(197,158,241,1) 0%, rgba(183,182,255,1) 72%, rgba(255,179,251,1) 100%, rgba(148,187,233,1) 100%); */
+    /* background: rgb(169,166,231);
+background: linear-gradient(90deg, rgba(169,166,231,1) 0%, rgba(88,135,255,1) 34%, rgba(74,176,233,1) 58%, rgba(87,87,255,1) 100%); */
+    /* background-color: rgb(83, 130, 170); */
+}
+#righttop{
+    width: 100%;
+    height: 55%;
+    padding: 4vw;
+    display: flex;
+    overflow: hidden;
+    /* background-color: rgba(143, 137, 137, 0.549); */
+}
+#imgbox{
+    width: 260px;
+    height: 260px;
+    box-shadow: 5px 5px 15px rgb(105, 105, 104);
+}
+#imgbox>img{
+    width: 100%;
+    height: 100%;
+}
+#songinfo{
+    padding-top: 5vw;
+    padding-left: 4vw;
+    width: 90%;
+    font-family:  gilroy;
+    /* background-color: antiquewhite; */
+}
+#songinfo>h1{
+    font-size: 4vw;
+    font-family: gilroy;
+    font-weight: 600;
+}
+#songinfo>h6{
+    font-size: 1.5vw;
+    font-family: gilroy;
+    font-weight: 500;
+}
+#rightbtm{
+    width: 90%;
+    height: 40%;
+    padding-left: 4vw;
+    padding-top: 0vw;
+    /* background-color: antiquewhite; */
+}
+audio{
+    
+}
+#rightbtmopt{
+    display: flex;
+    align-items: center;
+    height: 210px;
+    /* background-color: aliceblue; */
+    padding-bottom: 2vw;
+}
+#rightbtmopt>a{
+    /* margin-top: 50px; */
+    margin-right: 20px;
+    font-family: gilroy;
+    color: white;
+    /* color: black; */
+    /* display: inline-block; */
+    /* padding-left: 1vw;
+    padding-right: 1vw; */
+    padding: 1vw;
+    /* height: 40px; */
+    border: 1px solid rgb(0, 0, 0);
+    width: fit-content;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center
+}
+
+
+#nav{
+    width: 100%;
+    height: 9vh;
+    font-family: gilroy;
+   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 4vw;
+    padding-right: 2vw;
+    color: white;
+    background-color: black;
+    /* margin-bottom: 2px; */
+    border-bottom: 2px solid rgb(232, 36, 36);
+    
+    /* background-color: rgb(222, 197, 197); */
+}
+#nav>#navleft>a{
+    text-decoration: none;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: 1px solid white;
+}
+#navright{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navright>h1{
+    margin-left: 15px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    font-family: voyage;
+    font-size: 2vw;
+    /* text-transform: u; */
+}
+#navleft{
+    display: flex;
+    gap: 20px;
+}
+
+#navright>.ri-menu-line{
+display: none;
+}
+#addp{
+    display: flex;
+    align-items: center;
+}
+#addp>button{
+   font-size: 1vw;
+   background:none;
+   border: none;
+   border: 1px solid rgb(255, 253, 253);
+    padding: 1vw;
+    color: white;
+    margin-right: 10px;
+}
+#playopt{
+  
+    width: 200px;
+    height: 210px;
+    border-radius: 20px;
+    padding: 1vw;
+    background-color: black;
+    /* position: absolute; */
+    /* left: 45.5%;
+    bottom: 2%; */
+    display: none;
+    overflow: scroll;
+}
+#playopt::-webkit-scrollbar{
+    display: none;
+}
+#playopt>a{
+    font-family: gilroy;
+    padding: .5vw 0.2vw;
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-size: 1.2vw;
+    
+}
+#addp:hover>#playopt{
+    display: initial;
+}
+#songinfo>a{
+   margin-top: 20px;
+    height: 30px;
+    width: fit-content;
+   text-decoration: none;
+   padding: 0vw 1.5vw;
+    border-radius: 20px;
+    display: flex;align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}
+#btn{
+    margin-top: 20px;
+    height: 30px;
+    width: fit-content;
+   text-decoration: none;
+   padding: 0vw 1.5vw;
+    border: none;
+    display: flex;align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(255, 242, 242);
+    background: none;
+    font-size: 1vw;
+    color: #ffffff;
+}
+.favbtn{
+    margin-right: 20px;
+    font-family: gilroy;
+    color: rgb(255, 255, 255);
+    /* display: inline-block; */
+    /* padding-left: 1vw;
+    padding-right: 1vw; */
+    padding: 1vw;
+    /* height: 40px; */
+    border: 1px solid rgb(255, 255, 255);
+    width: 170px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: none;
+    font-size: 1vw;
+    
+}
+
+
+
+#musicctrl{
+    width: 100%;
+    height: 15vh;
+   
+    background-color: rgba(111, 103, 103, 0.574);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+#progress{
+    -webkit-appearance: none;
+    width: 70%;
+    height: 6px;
+    background: #c1c1c1;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+#progress::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    background: #c1c1c1;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 8px solid #ffffff;
+    box-shadow: 0 5px 5px rgba(150, 119, 119, 0.22);
+}
+#musicctrl>#time{
+    height: 5px;
+    width: 70%;
+    justify-content: space-between;
+    display: flex;
+    color: white;
+}
+#time>span{
+    color: #ffffff;
+    font-size: 1vw;
+}
+#controls{
+    width: 23%;
+    color: #ffffff;
+    display: flex;
+    font-size: 2vw;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+
+
+@media (max-width:600px) {
+   
+
+   #nav{
+       width: 100%;
+       height: 8vh;
+       font-family: gilroy;
+      
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       padding-left: 5vw;
+       padding-right: 5vw;
+       color: white;
+       background-color: black;
+       /* margin-bottom: 2px; */
+       border-bottom: 2px solid rgb(232, 36, 36);
+       
+       /* background-color: rgb(222, 197, 197); */
+   }
+   #nav>#navleft>a{
+    text-decoration: none;
+    padding-left: 2.5vw;
+    padding-right: 2.5vw;
+    height: 35px;
+    font-size: 3.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: 1px solid white;
+}
+#navright>h1{
+    font-weight: 500;
+    letter-spacing: 3px;
+    font-family: voyage;
+    font-size: 6.2vw;
+    /* text-transform: u; */
+}
+#navleft{
+    display: flex;
+    gap: 10px;
+}
+#navright>.ri-menu-line{
+    margin-top: 4px;
+    font-size: 5.5vw;
+    display:initial;
+    }
+       
+       #navright{
+           display: flex;
+           align-items: center;
+           justify-content: center;
+       }
+            
+#main{
+    width: 100%;
+    height: 92vh;
+    background-color: rgb(25, 25, 25);
+    display: flex;
+    /* overflow: scroll; */
+}
+#left{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: 9999;
+    padding-left: 10vw;
+    position: absolute;
+    flex-direction: column;
+    gap: 40px;
+   padding-top: 10vw;
+    background-color: black;
+    /* padding-right: 7vw; */
+    left: -100%;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 2s;
+}
+#left>a{
+   /* margin-left: 7vw; */
+    font-family: gilroy;
+    color: white;
+    text-decoration: none;
+    font-size: 6.4vw;
+    display: flex;
+    align-items: center;
+}
+#main{
+    width: 100%;
+    height: 92vh;
+    /* background-color: rgb(25, 25, 25); */
+    display: flex;
+    /* overflow: scroll; */
+}
+
+
+#right{
+    width: 100%;
+    height: 100%;background-color: rgba(137, 129, 129, 0.574);
+    
+
+    /* background-color: rgba(122, 117, 117, 0.507); */
+    color: white;
+    /* background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(197,158,241,1) 0%, rgba(183,182,255,1) 72%, rgba(255,179,251,1) 100%, rgba(148,187,233,1) 100%); */
+    /* background: rgb(169,166,231);
+background: linear-gradient(90deg, rgba(169,166,231,1) 0%, rgba(88,135,255,1) 34%, rgba(74,176,233,1) 58%, rgba(87,87,255,1) 100%); */
+    /* background-color: rgb(83, 130, 170); */
+}
+#righttop{
+    width: 100%;
+    height: 65%;
+    padding: 2vw;
+    display: flex;
+    flex-direction: column-reverse;
+    overflow: hidden;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgba(143, 137, 137, 0.549);
+}
+#imgbox{
+    width:80vw;
+    height: 45vh;
+    box-shadow: 5px 5px 15px rgb(105, 105, 104);
+}
+#imgbox>img{
+    width: 100%;
+    height: 100%;
+}
+#songinfo{
+    padding-top: 5vw;
+    padding-left: 0vw;
+    width: 80%;
+    font-family:  gilroy;
+    /* background-color: antiquewhite; */
+}
+#songinfo>h1{
+    text-align: center;
+    font-size: 5vw;
+    font-family: gilroy;
+    font-weight: 500;
+    margin-top: 10px;
+}
+#songinfo>h6{
+    text-align: center;
+    font-size: 4vw;
+    font-family: gilroy;
+    font-weight: 500;
+}
+#songinfo>p{
+    display: none;
+}
+#btn{
+    display: none;
+}
+#rightbtm{
+    width: 100%;
+    height: 40%;
+    padding-left: 0vw;
+    padding-top: 0vw;
+    /* background-color: antiquewhite; */
+}
+audio{
+    
+}
+#rightbtmopt{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 15vh;
+    /* background-color: aliceblue; */
+    padding-bottom: 2vw;
+}
+#rightbtmopt>a{
+    /* margin-top: 50px; */
+    margin-right: 20px;
+    font-family: gilroy;
+    color: white;
+    /* color: black; */
+    /* display: inline-block; */
+    /* padding-left: 1vw;
+    padding-right: 1vw; */
+    padding: 1vw;
+    /* height: 40px; */
+    border: 1px solid rgb(0, 0, 0);
+    width: fit-content;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center
+}
+
+
+
+
+
+
+#musicctrl{
+    width: 100%;
+    height: 15vh;
+   
+    background-color: rgba(111, 103, 103, 0.574);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+#progress{
+    -webkit-appearance: none;
+    width: 70%;
+    height: 6px;
+    background: #c1c1c1;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+#progress::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    background: #c1c1c1;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 8px solid #ffffff;
+    box-shadow: 0 5px 5px rgba(150, 119, 119, 0.22);
+}
+#musicctrl>#time{
+    height: 5px;
+    width: 70%;
+    justify-content: space-between;
+    display: flex;
+    color: white;
+}
+#time>span{
+    color: #ffffff;
+    font-size: 3vw;
+}
+#controls{
+  
+    width: 43%;
+    color: #ffffff;
+    display: flex;
+    font-size: 7vw;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+
+
+#addp{
+    display: flex;
+    align-items: center;
+}
+#addp>button{
+   font-size: 4vw;
+   background:none;
+   border: none;
+   border: 1px solid rgb(255, 253, 253);
+    padding: 4vw;
+    color: white;
+    margin-right: 10px;
+}
+#playopt{
+  z-index: 99999;
+    width: 200px;
+    height: 150px;
+    border-radius: 20px;
+    padding: 2vw;
+    background-color: black;
+    position: absolute;
+   left: 45.5%; 
+    bottom: 15%; 
+    display: none;
+    overflow: scroll;
+}
+#playopt::-webkit-scrollbar{
+    display: none;
+}
+#playopt>a{
+    /* text-align: center; */
+    font-family: gilroy;
+    padding: .5vw 0.2vw;
+    display: block;
+    text-decoration: none;
+    color: white;
+    margin-bottom: 5px;
+    font-size: 4.2vw;
+    
+}
+#addp:hover>#playopt{
+    display:none;
+}
+#songinfo>a{
+   margin-top: 20px;
+    height: 30px;
+    width: fit-content;
+   text-decoration: none;
+   padding: 0vw 1.5vw;
+    border-radius: 20px;
+    display: flex;align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}
+#btn{
+    margin-top: 20px;
+    height: 30px;
+    width: fit-content;
+   text-decoration: none;
+   padding: 0vw 1.5vw;
+    border: none;
+    display: none;align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(255, 242, 242);
+    background: none;
+    font-size: 1vw;
+    color: #ffffff;
+}
+.favbtn{
+    margin-right: 20px;
+    font-family: gilroy;
+    color: rgb(255, 255, 255);
+    /* display: inline-block; */
+    /* padding-left: 1vw;
+    padding-right: 1vw; */
+    padding: 1vw;
+    height: 13vw;
+    border: 1px solid rgb(255, 255, 255);
+    width: 150px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: none;
+    font-size: 4vw;
+    
+}
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<script>
+   
+</script>
+<body>
+    <div id="nav">
+        <div id="navright">
+            <i class="ri-menu-line"></i>
+            <h1>Musify</h1>
+        </div>
+       
+        <div id="navleft"><a href="/myprofile">My Account</a>
+            <a href="/logout">Logout</a></div>
+        
+    </div>
+    <div id="main">
+        <div id="left">
+            <a href="/main"><i class="ri-home-3-line"></i>&nbsp;&nbsp;&nbsp;Home</a>
+            <a href="/allsongs"><i class="ri-play-circle-fill"></i>&nbsp;&nbsp;&nbsp;All-Songs</a>
+            <a href="/myplaylist"><i class="ri-play-list-line"></i>&nbsp;&nbsp;&nbsp;My Playlist</a>
+            <a href="/favourites"><i class="ri-heart-add-line"></i>&nbsp;&nbsp;&nbsp;Favourites </a>
+            <a href="/createplaylist"><i class="ri-play-list-add-line"></i>&nbsp;&nbsp;&nbsp;Create Playlist</a>
+            <hr style="opacity: 0.5;">
+            <%user.playlist.forEach(function(play){%>
+                <a href="/openplaylist/<%=play._id%>"><i class="ri-play-list-line"></i>&nbsp;&nbsp;&nbsp;<%=play.playlistname%></a>
+           <% })%>
+        </div>
+        <div id="right">
+            <div id="righttop">
+                <div id="imgbox"><img src="<%=music.img%>" alt=""></div>
+                <div id="songinfo">
+                    <h6 ><%=music.type%></h6>
+                    <h1 id="mname"><%=music.songname%></h1>
+                    <p> <%=music.Artistname%> , 
+                        <%=music.Releasedate%>
+                        , 1 song, <%=music.likes.length%> Likes</p>
+                        <button id="btn">Like &nbsp;<i class="ri-thumb-up-line"></i></button>
+                        </div>
+            </div>
+            <div id="rightbtm">
+                <audio style="display: none;" autoplay controls controlsList="nodownload"   loop id="music">
+                    <source src="<%=music.Audio%>" type="audio/mp3">
+                    Your browser does not support the audio tag.
+                  </audio>
+                  <div id="musicctrl">
+                    <div id="controls">
+                       <a  href="/nextsong" style="text-decoration: none; color: white;" ><i class="ri-skip-back-fill"></i></a> 
+                       <div id="playbtn" onclick="playpause()"><i id="icn" class="ri-pause-fill play"></i>
+                    </div> 
+                        <a href="/nextsong" style="text-decoration: none; color: white;" ><i class="ri-skip-forward-fill"></i></a>
+                    </div>
+                    <input type="range" name="" id="progress" value="0">
+                    <div id="time">
+                        <span id="begtime">0:00</span>
+                        <span id="endtime">4.55</span>
+                    </div>
+                </div>
+                
+                  <div id="rightbtmopt">
+                    
+                   <% if(value != -1){ %>
+                    <button class="favbtn">Remove from &nbsp;&nbsp;<span style="color: red;" >❤</span></button>
+                       <% } else{ %>
+                    <button class="favbtn">Add to&nbsp;&nbsp; <i class="ri-heart-add-line"></i></button>
+                <%  } %>
+                   <div id="addp">
+                        <button>Add to Playlist</button>
+                        <div id="playopt">
+                            <a href="/createplaylist">Create new Playlist</a>
+                            <hr>
+                            <% user.playlist.forEach(function(play){ %>
+                          
+                            <a href="/addplay/<%=play._id%>/<%=music._id%>"><%=play.playlistname%></a>
+                           <%})%>
+                            
+                        </div>
+                    </div>
+
+                  </div>
+            </div>
+        </div>
+    </div>
+    <script src="../javascripts/musicpage.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.2/axios.min.js" integrity="sha512-NCiXRSV460cHD9ClGDrTbTaw0muWUBf/zB/yLzJavRsPNUl9ODkUVmUHsZtKu17XknhsGlmyVoJxLg/ZQQEeGA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script>
+             document.querySelector("#btn").addEventListener("click",function(){
+            axios.get(`/like/<%=music._id%>`).then(function(res){
+                // console.log(res.data);
+                var data = res.data;
+                document.querySelector("#songinfo>p").textContent= `${data.Artistname} , 
+                ${data.Releasedate}
+                        , 1 song, ${data.likes.length} Likes`
+          
+            })
+         })
+         document.querySelector(".favbtn").addEventListener("click",function(){
+            axios.get(`/fav/<%=music._id%>`).then(function(res){    
+                // console.log(res.data.favourites);
+                // console.log(res.data);
+                var data = res.data;
+                if(data.favourites.indexOf(`<%=music._id%>`) !== -1){
+                    document.querySelector(".favbtn").innerHTML =   `Remove from &nbsp;&nbsp;<span style="color: red;" >❤</span>`;
+
+                }else{
+                    document.querySelector(".favbtn").innerHTML =   `Add to &nbsp;&nbsp;<i class="ri-heart-add-line"></i></span>`;
+ 
+                }
+          
+            })
+         })
+         document.querySelector("#skip").addEventListener("click",function(){
+            // console.log("hello");
+            axios.get("/nextsong").then(function(res){
+                document.querySelector("#music").setAttribute('src',`${res.data.Audio}`); 
+                document.querySelector("#mname").innerHTML = `${res.data.songname}`;
+                document.querySelector("#songinfo>p").textContent= `${res.data.Artistname} , 
+                ${res.data.Releasedate}
+                        , 1 song, ${res.data.likes.length} Likes`
+            })
+         })
+       
+    
+   </script>
+      
+</body>
+</html>

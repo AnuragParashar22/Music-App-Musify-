@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musify || By Anurag Parashar</title>
+    <link rel="shortcut icon" href="../images/dazzle-music-disc.png" type="image/x-icon">
+   
+    <style> @font-face {
+        font-family: gilroy;
+        src: url(../fonts/Gilroy-Regular.otf);
+      }
+        @font-face {
+        font-family: gilroy-light;
+        src: url(../fonts/Gilroy-Thin.otf);
+      }
+      @font-face {
+    font-family: voyage;
+    src: url(../fonts/Voyage-Regular.otf);
+  }
+        *{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+#main{
+    width: 100%;
+    height: 91vh;
+    background-color: rgb(56, 56, 56);
+    padding: 0vw 4vw;
+    font-family: gilroy;
+    /* overflow: hidden; */
+}
+#main>h1{
+    color: white;
+    font-weight: 500;
+    margin-left: 20px;
+}
+#profiletop{
+    
+    width: 100%;
+    height: 45%;
+   border-radius: 20px;
+   background-color: black;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+}
+#profileimg{
+    width: 16vw;
+    height: 16vw;
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 5px;
+    background-color: rgb(255, 255, 255);
+    background-image: url(https://imgs.search.brave.com/zc8nWb5P3ZsxnvxZ7XBau6FrABz-9NNJQkVYawYuzEQ/rs:fit:980:980:1/g:ce/aHR0cDovL2Nkbi5v/bmxpbmV3ZWJmb250/cy5jb20vc3ZnL2lt/Z18yNDc4Ny5wbmc);
+    background-size: cover;
+    background-position: center;
+    border: 1px solid white;
+}
+#profileimg>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+#profile{
+    width: 60%;
+    height: 100%;
+    font-family: gilroy;
+    /* background-color: red; */
+    padding-left: 2vw;
+}
+#profile>#input>h1{
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    /* border: 1px solid white; */
+    color: white;
+    font-weight: 500;
+    font-size: 5.5vw;
+    padding: 0.5vw;
+}
+#profile>#input>h6{
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    /* border: 1px solid white; */
+    color: white;
+    font-weight: 500;
+    font-size: 1.2vw;
+    padding: 0.5vw;
+}
+#profile>#input>h5{
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    /* border: 1px solid white; */
+    color: white;
+    font-weight: 500;
+    font-size: 1.2vw;
+    padding: 0.5vw;
+}
+#profile>a{
+    margin-left: 45vw;
+    display: block;
+    width: 120px;
+    height: 35px;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+#profile>#input{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 0px;
+    /* background-color: antiquewhit; */
+}
+#profile>#input>h2{
+    font-size: 1.2vw;
+    color: white;
+    font-weight: 500;
+    margin-left: 2vw;
+}
+#profilebtm{
+    margin-top: 20px;
+    width: 100%;
+    height: 46%;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 1vw;
+    display : flex;
+    justify-content: space-between;
+    background-color: rgb(0, 0, 0);
+}
+#profilebtmleft{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 1vw;
+    border-right: 1px solid white;
+    /* background-color: rgb(0, 23, 23); */
+    /* justify-content: space-around; */
+}
+#profilebtmleft>button{
+    background: none;
+    border: none;
+    border: 1px solid white;
+    height: 40px;
+    width: fit-content;
+    padding: 0 1.5vw;
+    color: white;
+    border-radius: 10px;
+}
+#profilebtmleft>a{
+    display: block;
+    width: fit-content;
+    padding: 0 1vw;
+    height: 35px;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+#profilebtmright{
+    width: 76%;
+    height: 100%;
+    /* background-color: aliceblue; */
+}
+#profilebtmright>h3{
+    font-size: 2vw;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 20px;
+}
+#profilebtmright>a{
+    width: 95%;
+}
+#songs{
+    width: 95%;
+    height: 60px;
+    background-color: rgb(24, 24, 24);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    color: white;
+    margin-bottom: 20px;
+}
+#songinfo{
+    display: flex;
+    gap: 30px;
+}
+#songinfo>img{
+    width: 50px;
+    height: 50px;
+    /* background-color: aqua; */
+}
+#songs>span{
+    color: white;
+    font-size: 5vw;
+  
+}
+#songopt{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+#songopt>h6{
+    font-size: 1vw;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+#options{
+    position: relative;
+    cursor: pointer;
+    font-size: 2vw;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+    /* background-color: antiquewhite; */
+}
+#songopt>a{
+    color: white;
+    text-decoration: none;
+    /* color: transparent; */
+}
+#optdrop{
+    display: none;
+    position: absolute;
+    width: 120px;
+    height: 150px;
+    background-color: rgb(85, 84, 84);
+    border-radius: 10px;
+    /* display: flex; */
+    flex-direction: column;
+    overflow: hidden;
+    padding: 10px;
+    z-index: 9;
+    transform: translateY(-120px);
+}
+#optdrop>a{
+    text-decoration: none;
+    width: 100%;
+    height: 40px;
+    font-size: 1vw;
+    color: white;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    border-bottom: 1px solid white;
+}
+#options:hover>#optdrop{
+    display: flex;
+}
+
+#nav{
+    width: 100%;
+    height: 9vh;
+    font-family: gilroy;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 4vw;
+    padding-right: 2vw;
+    color: white;
+    background-color: black;
+    /* margin-bottom: 2px; */
+    border-bottom: 2px solid rgb(232, 36, 36);
+    
+    /* background-color: rgb(222, 197, 197); */
+}
+#nav>#navleft>a{
+    text-decoration: none;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: 1px solid white;
+}
+#nav>h1{
+    font-weight: 500;
+    letter-spacing: 3px;
+    font-family: voyage;
+    font-size: 2vw;
+    /* text-transform: u; */
+}
+#navleft{
+    display: flex;
+    gap: 20px;
+}
+@media (max-width:600px) {
+#main{
+    width: 100%;
+    height: 91vh;
+    background-color: rgb(56, 56, 56);
+    padding: 0vw 4vw;
+    font-family: gilroy;
+    /* overflow: hidden; */
+}
+#main>h1{
+    color: white;
+    font-weight: 500;
+    margin-left: 20px;
+}
+#profiletop{
+    
+    width: 100%;
+    height: 95%;
+   border-radius: 20px;
+   background-color: black;
+   display: flex;
+   flex-direction: column;
+   justify-content:initial;
+   align-items: center;
+   padding: 8vw 0vw;
+}
+#profileimg{
+    width: 60vw;
+    height: 60vw;
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 5px;
+    margin-bottom: 10vw;
+    background-color: rgb(255, 255, 255);
+    background-image: url(https://imgs.search.brave.com/zc8nWb5P3ZsxnvxZ7XBau6FrABz-9NNJQkVYawYuzEQ/rs:fit:980:980:1/g:ce/aHR0cDovL2Nkbi5v/bmxpbmV3ZWJmb250/cy5jb20vc3ZnL2lt/Z18yNDc4Ny5wbmc);
+    background-size: cover;
+    background-position: center;
+    border: 1px solid white;
+}
+#profileimg>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#profile{
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    font-family: gilroy;
+    /* background-color: red; */
+    padding-left: 2vw;
+    display: flex;
+    /* margin-top: 15vw; */
+    justify-content: space-around;
+    flex-direction: column;
+     
+}
+#profile>#input>h1{
+    
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    /* background-color: aqua; */
+    /* border: 1px solid white; */
+    color: white;
+    font-weight: 500;
+    font-size: 7.5vw;
+    padding: 0vw;
+   
+}
+#profile>#input>h6{
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    /* border: 1px solid white; */
+    color: white;
+    font-weight: 500;
+    font-size: 5.2vw;
+    padding: 0.5vw;
+}
+#profile>#input>h5{
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    /* border: 1px solid white; */
+    color: white;
+    font-weight: 500;
+    font-size: 5.2vw;
+    padding: 0.5vw;
+   
+   
+}
+#profile>a{
+    margin-left: auto;
+    margin-right: auto;
+    /* margin-left: 45vw; */
+    display: block;
+    width: 150px;
+    height: 40px;
+    font-size: 4.2vw;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+#profile>#input{
+    display: flex;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    /* background-color: antiquewhit; */
+}
+#profile>#input>h2{
+    flex-shrink: 0;
+    
+    font-size: 5.2vw;
+    color: white;
+    font-weight: 500;
+    margin-left: 2vw;
+}
+#profilebtm{
+    margin-top: 20px;
+    width: 100%;
+    height: 46%;
+    display: none;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 1vw;
+    /* display : flex; */
+    justify-content: space-between;
+    background-color: rgb(0, 0, 0);
+}
+#profilebtmleft{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 1vw;
+    border-right: 1px solid white;
+    /* background-color: rgb(0, 23, 23); */
+    /* justify-content: space-around; */
+}
+#profilebtmleft>button{
+    background: none;
+    border: none;
+    border: 1px solid white;
+    height: 40px;
+    width: fit-content;
+    padding: 0 1.5vw;
+    color: white;
+    border-radius: 10px;
+}
+#profilebtmleft>a{
+    display: block;
+    width: fit-content;
+    padding: 0 1vw;
+    height: 35px;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+#profilebtmright{
+    width: 76%;
+    height: 100%;
+    /* background-color: aliceblue; */
+}
+#profilebtmright>h3{
+    font-size: 2vw;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 20px;
+}
+#profilebtmright>a{
+    width: 95%;
+}
+#songs{
+    width: 95%;
+    height: 60px;
+    background-color: rgb(24, 24, 24);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    color: white;
+    margin-bottom: 20px;
+}
+#songinfo{
+    display: flex;
+    gap: 30px;
+}
+#songinfo>img{
+    width: 50px;
+    height: 50px;
+    background-color: aqua;
+}
+#songs>span{
+    color: white;
+    font-size: 5vw;
+  
+}
+#songopt{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+#songopt>h6{
+    font-size: 1vw;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+#options{
+    position: relative;
+    cursor: pointer;
+    font-size: 2vw;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+    /* background-color: antiquewhite; */
+}
+#songopt>a{
+    color: white;
+    text-decoration: none;
+    /* color: transparent; */
+}
+#optdrop{
+    display: none;
+    position: absolute;
+    width: 120px;
+    height: 150px;
+    background-color: rgb(85, 84, 84);
+    border-radius: 10px;
+    /* display: flex; */
+    flex-direction: column;
+    overflow: hidden;
+    padding: 10px;
+    z-index: 9;
+    transform: translateY(-120px);
+}
+#optdrop>a{
+    text-decoration: none;
+    width: 100%;
+    height: 40px;
+    font-size: 1vw;
+    color: white;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    border-bottom: 1px solid white;
+}
+#options:hover>#optdrop{
+    display: flex;
+}
+
+#nav{
+    width: 100%;
+    height: 9vh;
+    font-family: gilroy;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    color: white;
+    background-color: black;
+    /* margin-bottom: 2px; */
+    border-bottom: 2px solid rgb(232, 36, 36);
+    
+    /* background-color: rgb(222, 197, 197); */
+}
+#nav>#navleft>a{
+    text-decoration: none;
+       padding-left: 3vw;
+       padding-right: 3vw;
+       height: 30px;
+       font-size: 4vw;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       color: white;
+       border: 1px solid white;
+}
+#nav>h1{
+    font-weight: 500;
+    letter-spacing: 3px;
+    font-family: voyage;
+    font-size: 6.5vw;
+    /* text-transform: u; */
+}
+#navleft{
+    display: flex;
+    gap: 20px;
+}
+}
+    </style>
+    
+</head>
+<body>
+    <div id="nav">
+        <h1>Musify</h1>
+        <div id="navleft"><a href="/main">Home</a>
+            <a href="/logout">Logout</a></div>
+        
+    </div>
+    <div id="main">
+        <!-- <h1>User Account.</h1> -->
+        <!-- <%if(data.isAdmin){ %>
+            <h1>Admin Panel</h1>
+     <% }else{ %>
+    <h1>User Account.</h1>
+   <%  } %> -->
+         
+   
+        <br>
+        <div id="profiletop">
+            <div id="profileimg">
+                <img src="<%=data.dpimg%>" alt="">
+            </div>
+            <div id="profile">
+                <div id="input">
+                <h1><%=data.name%></h1>
+                </div>
+                <div id="input">
+                    <h2>Username :-&nbsp;</h2>
+                <h6><%=data.username%></h6>
+            </div>
+                
+                <div id="input">
+                    <h2>E-mail :-&nbsp;</h2>
+                <h5><%=data.email%></h5>
+            </div>
+                
+                <div id="input">
+                    <h2>Mob No :- &nbsp;</h2>
+                <h5><%=data.phonenum%></h5>
+            </div>
+                
+                
+                <a id="editbtn" href="/editprofile">Edit Profile</a>
+            </div>
+        </div>
+        <div id="profilebtm">
+            <%if(data.isAdmin){ %>
+            <div id="profilebtmleft">
+                <a href="/uploadsong" id="uploadbtn">Upload a New Song</a>
+                <a href="/editsongs">Edit Songs</a>
+                <a href="/createplaylist" >Create plyalist</a>
+                <a href="/allsongs" href="">All Songs.</a>
+            </div>
+            <% }else{ %>
+            <div id="profilebtmleft">
+                <a href="/main">Home</a>
+                <a href="/favourites" id="uploadbtn">Favourites Song</a>
+                <a href="/createplaylist" >Create plyalist</a>
+                
+                <a href="/allsongs" href="">All Songs.</a>
+            </div>
+            <%  } %>
+            <div id="profilebtmright">
+                <h3>Latest Songs</h3>
+                <% song.reverse().forEach(function(songs){ %>
+                    <a style="text-decoration: none; color: white;" href="/playsong/<%=songs._id%>">
+                        <div id="songs">
+                            <div id="songinfo">
+                                <img src="<%=songs.img%>" alt="">
+                                <div id="songname">
+                                    <h3><%=songs.songname%></h3>
+                                    <h5><%=songs.Artistname%></h5>
+                                </div>
+                            </div>
+                            <div id="songopt">
+                                <a href="/fav/<%=songs._id%>">❤</a>
+                                <h6><%=songs.type%></h6>
+                                 <div id="options">...
+                                    <%if(data.isAdmin){ %>
+                                        <div id="optdrop">
+                                            <a href="/edit/<%=songs._id%>">Edit</a>
+                                            <a href="/deletesong/<%=songs._id%>">Delete</a>
+                                            <a href="/fav/<%=songs._id%>">Add to Fav</a>
+                                        </div>
+                                  <%  } else{ %>
+                                        <div id="optdrop">
+                                        <a href="/playsong/<%=songs._id%>">Play Song</a>
+                                        <a href="/fav/<%=songs._id%>">Add to Fav</a>
+                                        </div>
+                                <%  }%>
+                                    
+                                 </div>
+                            </div>
+                        </div>
+                    </a>
+               <% }) %>
+               
+               
+            </div>
+        </div>
+    </div>
+   
+    </body>
+</html>
