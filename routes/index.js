@@ -87,6 +87,7 @@ router.get('/main',isloggedIn ,function(req, res, next) {
   })
   })
 });
+
 router.post("/register",function(req,res){
 var user = new userModel({
   name:req.body.name,
@@ -94,17 +95,20 @@ var user = new userModel({
   email:req.body.email,
   phonenum:req.body.phonenum,
 })
-var old = userModel.findOne({username:req.body.username});
-if(old){
-res.redirect("/")
-}
-else{
+userModel.findOne({username:req.body.username}).then(function(old){
+ if(old === null){
   userModel.register(user,req.body.password).then(function(user){
     passport.authenticate('local')(req,res,function(){
       res.redirect("/main")
     })
   })
 }
+else{
+  res.redirect("/")
+}
+})
+
+
 })
 
 router.post('/login',passport.authenticate('local',{
