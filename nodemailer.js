@@ -40,7 +40,7 @@ async function sendMail(email,otp,userid){
    </div>
    <p style="font-size:1.1em">Hi,</p>
    <p>Thank you for choosing Musify. Use the following link to reset Your password procedures. OTP is valid for 10 minutes</p>
-   <a href=http://localhost:3000/forgot/password/${userid}/otp/${otp} style="background: #00466a;margin: 0 auto;width: max-content;padding: 0 10px;color: #fff;border-radius: 4px;">Click here to reset</a>
+   <a href=https://musify-hu4x.onrender.com/forgot/password/${userid}/otp/${otp} style="background: #00466a;margin: 0 auto;width: max-content;padding: 0 10px;color: #fff;border-radius: 4px;">Click here to reset</a>
    <p style="font-size:0.9em;">Regards,<br />Musify</p>
    <hr style="border:none;border-top:1px solid #eee" />
    <div style="float:right;padding:8px 0;color:#aaa;font-size:0.8em;line-height:1;font-weight:300">
